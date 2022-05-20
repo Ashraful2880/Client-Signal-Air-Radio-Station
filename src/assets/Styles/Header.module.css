@@ -1,0 +1,51 @@
+.bg {
+    background-color: black;
+    padding: 6px 0px;
+}
+
+.headerContainer {
+    padding: 0 5%;
+    margin: auto;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logoStyle {
+    width: 50px;
+}
+
+.unorderList {
+    display: flex;
+    list-style-type: none;
+}
+
+.unorderList a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.unorderList li {
+    margin: 0px 5px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.unorderList li:hover {
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.unorderList li:focus {
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
