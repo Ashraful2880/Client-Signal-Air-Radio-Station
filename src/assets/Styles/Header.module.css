@@ -3,15 +3,30 @@
     padding: 6px 0px;
 }
 
-.headerContainer {
+.container {
     padding: 0 5%;
     margin: auto;
 }
 
 .navBar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+}
+
+.getStarted a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: red;
+    padding: 10px 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    transition: ease-in-out 0.25s;
+}
+
+.getStarted a:hover {
+    background-color: transparent;
 }
 
 .logoStyle {
@@ -30,12 +45,13 @@
 }
 
 .unorderList li {
-    margin: 0px 5px;
-    font-size: 16px;
+    margin: 0px 2px;
+    font-size: 14px;
     font-weight: 500;
     padding: 10px 10px;
     border: 1px solid transparent;
     border-radius: 5px;
+    transition: ease-in-out 0.25s;
 }
 
 .unorderList li:hover {

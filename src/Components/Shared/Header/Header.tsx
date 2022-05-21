@@ -6,7 +6,7 @@ import headerStyle from "../../../assets/Styles/Header.module.css";
 const Header = () => {
     return (
         <div className={headerStyle.bg}>
-            <div className={headerStyle.headerContainer}>
+            <div className={headerStyle.container}>
                 <nav className={headerStyle.navBar}>
                     <div >
                         <Link to="/home">
@@ -45,6 +45,11 @@ const Header = () => {
                             </li>
                         </Link>
                     </ul>
+                    <div className={headerStyle.getStarted}>
+                        <Link to="/signup">
+                            Get Started
+                        </Link>
+                    </div>
                 </nav>
             </div>
         </div>
