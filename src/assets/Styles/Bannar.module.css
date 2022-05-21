@@ -1,0 +1,23 @@
+.textPosition {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    text-align: left;
+    color: #fff;
+}
+
+.textPosition h1 {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.headingColor {
+    color: orange;
+}
+
+.textPosition p {
+    width: 60%;
+    margin: 10px 0px 20px 0px;
+    font-size: 18px;
+}
