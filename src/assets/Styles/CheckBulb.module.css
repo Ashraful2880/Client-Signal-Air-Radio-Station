@@ -1,0 +1,43 @@
+.container {
+    padding: 0 5%;
+    margin: auto;
+    min-height: 70vh;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.offButton {
+    padding: 10px 30px;
+    margin: 0px 10px;
+    background: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    transition: ease-in-out 0.25s;
+    cursor: pointer;
+}
+
+.offButton:hover {
+    background: transparent;
+    color: red;
+}
+
+.onButton {
+    padding: 10px 30px;
+    margin: 0px 10px;
+    background: green;
+    border: 1px solid green;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    transition: ease-in-out 0.25s;
+    cursor: pointer;
+}
+
+.onButton:hover {
+    background: transparent;
+    color: green;
+}
