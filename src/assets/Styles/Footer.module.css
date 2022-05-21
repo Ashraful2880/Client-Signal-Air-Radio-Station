@@ -1,0 +1,59 @@
+.bg {
+    background-color: black;
+    color: #fff;
+    padding: 50px 0px;
+}
+
+.container {
+    padding: 0 5%;
+    margin: auto;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footerLogo {
+    width: 100px;
+    margin: auto;
+}
+
+.footerHead {
+    margin-bottom: 30px;
+}
+
+.socialLink {
+    width: 50%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socialIcon {
+    height: 15px;
+    width: 15px;
+    padding: 8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: ease-in-out 0.25s;
+}
+
+.socialIcon:hover {
+    border: 2px solid red;
+    background-color: red;
+}
+
+.copyrightText {
+    color: rgb(177, 177, 177);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+    transition: ease-in-out 0.25s;
+}
+
+a:hover {
+    color: red;
+}
