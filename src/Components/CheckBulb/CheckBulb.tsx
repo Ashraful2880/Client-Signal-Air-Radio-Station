@@ -8,11 +8,7 @@ const CheckBulb = () => {
     return (
         <div className={bulbStyle.container}>
             <h1>Click A Button to On/Off the Bulb</h1>
-            <img src={bulb} alt="Bulb" />
-            <div>
-                <button onClick={() => setBulb(bulbOn)} className={bulbStyle.onButton}>ON</button>
-                <button onClick={() => setBulb(bulbOff)} className={bulbStyle.offButton}>OFF</button>
-            </div>
+            <img onClick={() => setBulb(bulb === bulbOn ? bulbOff : bulbOn)} src={bulb} alt="Bulb" />
         </div>
     );
 };
