@@ -1,0 +1,81 @@
+.bgStyle {
+    min-height: 80vh;
+    max-width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.676), rgba(0, 0, 0, 0.687)), url("https://templatekit.jegtheme.com/megafm/wp-content/uploads/sites/131/2021/07/P457XK8.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    padding: 10px;
+}
+
+.formContainer {
+    border: 1px solid #fff;
+    width: 40%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 30px 10px;
+}
+
+.welcome {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.login {
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mainLogo {
+    width: 15%;
+    margin-bottom: 20px;
+}
+
+.inputContainer {
+    width: 40%;
+    margin: auto;
+}
+
+.label {
+    font-size: 20px;
+    color: rgb(177, 175, 175);
+    font-weight: 600;
+    text-align: left;
+    display: block;
+}
+
+.email {
+    width: 100%;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.submit {
+    color: #fff;
+    background-color: blue;
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid blue;
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.submit:hover {
+    background-color: transparent;
+}
+
+.new {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}

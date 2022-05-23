@@ -49,6 +49,16 @@ const Header = () => {
                                 Dashboard
                             </li>
                         </Link>
+                        <Link to="/signup">
+                            <li>
+                                SignUp
+                            </li>
+                        </Link>
+                        <Link to="/signin">
+                            <li>
+                                SignIn
+                            </li>
+                        </Link>
                     </ul>
                     <div className={headerStyle.getStarted}>
                         <Link to="/signup">

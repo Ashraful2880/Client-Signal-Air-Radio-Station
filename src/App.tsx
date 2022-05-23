@@ -9,6 +9,8 @@ import Home from './Components/Home/Home/Home';
 import RadioStation from './Components/RadioStation/RadioStation';
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from './Components/Shared/Header/Header';
+import Signin from './Components/Signin/Signin';
+import SignUp from './Components/SignUp/SignUp';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/radioStation" element={<RadioStation />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<Signin />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
         </Routes>
         <Footer />
