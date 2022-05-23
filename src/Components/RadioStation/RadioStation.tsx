@@ -7,15 +7,26 @@ import radioStyle from "../../assets/Styles/RadioStation.module.css";
 
 
 const RadioStation = () => {
-    const [display, setDisplay] = useState('none')
-
     const [radioList, setRadioList] = React.useState<
         Array<{
             Name: string,
             Code: number,
-            Image: string
+            Image: string,
+            display: string
         }>
     >([])
+    const [playing, setPlaying] = useState<any>({})
+
+    const toogleExpand = (query: Number) => {
+        const found = radioList.find(element => element.Code === query);
+        setPlaying(found)
+        const result = radioList.filter(element => element.Code !== query);
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        found ? found.display = 'block' : "none";
+        result.map((i) => {
+            i.display = "none";
+        });
+    }
 
     useEffect(() => {
         fetch("./FMList.json")
@@ -41,11 +52,11 @@ const RadioStation = () => {
                         {
                             radioList.map(radio =>
                                 <li key={radio?.Code}>
-                                    <button className={radioStyle.fmBtn} onClick={() => setDisplay("block")}>
+                                    <button className={radioStyle.fmBtn} onClick={() => toogleExpand(radio.Code)}>
                                         <p>{radio?.Name}</p>
                                         <p>{radio?.Code}</p>
                                     </button>
-                                    <div className={radioStyle.radioContainer} style={{ display: `${display}` }}>
+                                    <div className={radioStyle.radioContainer} style={{ display: `${radio.display}` }}>
                                         <div className={radioStyle.player}>
                                             <img className={radioStyle.minusbtn} src={minus} alt="Minus Button" />
                                             <img className={radioStyle.playerImg} src={radio?.Image} alt="Player" />
@@ -55,10 +66,13 @@ const RadioStation = () => {
                                 </li>
                             )
                         }
-                        <div className={radioStyle.playing}>
-                            <p>Currently Playing</p>
-                            <h3>Dribble FM</h3>
-                        </div>
+                        {
+                            playing?.Name &&
+                            <div className={radioStyle.playing}>
+                                <p>Currently Playing</p>
+                                <h3>{playing?.Name}</h3>
+                            </div>
+                        }
                     </ul>
                 </div>
             </div>
