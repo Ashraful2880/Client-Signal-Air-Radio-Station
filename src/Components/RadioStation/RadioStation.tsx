@@ -3,11 +3,12 @@ import backArrow from "../../assets/Images/back-arrow.png";
 import SwitchImage from "../../assets/Images/switch.png";
 import minus from "../../assets/Images/minus.png";
 import plus from "../../assets/Images/plus.png";
-import './test.css';
 import radioStyle from "../../assets/Styles/RadioStation.module.css";
 
 
 const RadioStation = () => {
+    const [display, setDisplay] = useState('none')
+
     const [radioList, setRadioList] = React.useState<
         Array<{
             Name: string,
@@ -37,71 +38,23 @@ const RadioStation = () => {
                 </div>
                 <div>
                     <ul className={radioStyle.menuArea} >
-                        <li className="listItem" id="about">
-                            <a href="#about" className={radioStyle.fmBtn}>
-                                <p>Putin FM</p>
-                                <p>66.6</p>
-                            </a>
-                            <div className="radioContainer">
-                                <div className={radioStyle.player}>
-                                    <img className={radioStyle.minusbtn} src={minus} alt="Minus Button" />
-                                    <img className={radioStyle.playerImg} src="https://res.cloudinary.com/ashraful-islam/image/upload/v1653291419/Radio%20Stations/radio3_p6ecev.png" alt="Player" />
-                                    <img className={radioStyle.minusbtn} src={plus} alt="Plus Button" />
-                                </div>
-                            </div>
-                        </li>
-                        <li className="listItem" id="dribble">
-                            <a href="#dribble" className={radioStyle.fmBtn}>
-                                <p>Dribbble FM</p>
-                                <p>101.26</p>
-                            </a>
-                            <div className="radioContainer">
-                                <div className={radioStyle.player}>
-                                    <img className={radioStyle.minusbtn} src={minus} alt="Minus Button" />
-                                    <img className={radioStyle.playerImg} src="https://res.cloudinary.com/ashraful-islam/image/upload/v1653291419/Radio%20Stations/radio3_p6ecev.png" alt="Player" />
-                                    <img className={radioStyle.minusbtn} src={plus} alt="Plus Button" />
-                                </div>
-                            </div>
-                        </li>
-                        <li className="listItem" id="doge">
-                            <a href="#doge" className={radioStyle.fmBtn}>
-                                <p>Doge FM</p>
-                                <p>99.4</p>
-                            </a>
-                            <div className="radioContainer">
-                                <div className={radioStyle.player}>
-                                    <img className={radioStyle.minusbtn} src={minus} alt="Minus Button" />
-                                    <img className={radioStyle.playerImg} src="https://res.cloudinary.com/ashraful-islam/image/upload/v1653291419/Radio%20Stations/radio3_p6ecev.png" alt="Player" />
-                                    <img className={radioStyle.minusbtn} src={plus} alt="Plus Button" />
-                                </div>
-                            </div>
-                        </li>
-                        <li className="listItem" id="ballads">
-                            <a href="#ballads" className={radioStyle.fmBtn}>
-                                <p>Ballads FM</p>
-                                <p>87.1</p>
-                            </a>
-                            <div className="radioContainer">
-                                <div className={radioStyle.player}>
-                                    <img className={radioStyle.minusbtn} src={minus} alt="Minus Button" />
-                                    <img className={radioStyle.playerImg} src="https://res.cloudinary.com/ashraful-islam/image/upload/v1653291419/Radio%20Stations/radio3_p6ecev.png" alt="Player" />
-                                    <img className={radioStyle.minusbtn} src={plus} alt="Plus Button" />
-                                </div>
-                            </div>
-                        </li>
-                        <li className="listItem" id="maximum">
-                            <a href="#maximum" className={radioStyle.fmBtn}>
-                                <p>Maximum FM</p>
-                                <p>142.2</p>
-                            </a>
-                            <div className="radioContainer">
-                                <div className={radioStyle.player}>
-                                    <img className={radioStyle.minusbtn} src={minus} alt="Minus Button" />
-                                    <img className={radioStyle.playerImg} src="https://res.cloudinary.com/ashraful-islam/image/upload/v1653291419/Radio%20Stations/radio3_p6ecev.png" alt="Player" />
-                                    <img className={radioStyle.minusbtn} src={plus} alt="Plus Button" />
-                                </div>
-                            </div>
-                        </li>
+                        {
+                            radioList.map(radio =>
+                                <li key={radio?.Code}>
+                                    <button className={radioStyle.fmBtn} onClick={() => setDisplay("block")}>
+                                        <p>{radio?.Name}</p>
+                                        <p>{radio?.Code}</p>
+                                    </button>
+                                    <div className={radioStyle.radioContainer} style={{ display: `${display}` }}>
+                                        <div className={radioStyle.player}>
+                                            <img className={radioStyle.minusbtn} src={minus} alt="Minus Button" />
+                                            <img className={radioStyle.playerImg} src={radio?.Image} alt="Player" />
+                                            <img className={radioStyle.minusbtn} src={plus} alt="Plus Button" />
+                                        </div>
+                                    </div>
+                                </li>
+                            )
+                        }
                         <div className={radioStyle.playing}>
                             <p>Currently Playing</p>
                             <h3>Dribble FM</h3>

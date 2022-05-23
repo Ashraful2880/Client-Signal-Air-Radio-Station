@@ -10,8 +10,8 @@
 }
 
 .container {
-    /* min-height: 70vh; */
-    padding: 5%;
+    min-height: 70vh;
+    padding: 1% 5% 5% 5%;
     width: 50%;
     margin: auto;
 }
@@ -26,7 +26,6 @@
     border-top-right-radius: 20px;
 }
 
-
 .menuArea {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -35,6 +34,7 @@
 }
 
 .fmBtn {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,14 +45,22 @@
     border-bottom: 1px solid rgb(80, 80, 80);
 }
 
+.fmBtn:hover {
+    background-color: rgb(22, 17, 17);
+}
+
 .fmBtn p {
     font-size: 18px;
     font-weight: 400;
     color: #a4a5ad;
 }
 
-
-
+.radioContainer {
+    background: #31303A;
+    overflow: hidden;
+    transition: ease-in-out 1s;
+    max-height: 500px;
+}
 
 .playing p {
     color: #D9B06A;
@@ -64,11 +72,6 @@
     color: #a4a5ad;
     margin-bottom: 10px;
 }
-
-
-
-
-
 
 button {
     border: none;
