@@ -1,0 +1,32 @@
+.container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
+.menuArea {
+    background-color: black;
+    color: #fff;
+    height: 100vh;
+}
+
+.menuContainer {
+    padding-top: 20%;
+}
+
+.menuContainer a {
+    display: block;
+    margin: 10px 10%;
+    padding: 3%;
+    color: rgb(165, 162, 162);
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid rgb(139, 139, 139);
+    border-radius: 7px;
+    transition: ease-in-out 0.3s;
+}
+
+.menuContainer a:hover {
+    background-color: red;
+    color: #fff;
+    border: 1px solid red;
+}

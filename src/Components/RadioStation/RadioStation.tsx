@@ -29,7 +29,7 @@ const RadioStation = () => {
     }
 
     useEffect(() => {
-        fetch("./FMList.json")
+        fetch("http://localhost:5000/stations")
             .then(res => res.json())
             .then(data => setRadioList(data)
             )

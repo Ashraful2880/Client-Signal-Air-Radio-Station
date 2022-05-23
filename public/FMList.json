@@ -28,5 +28,29 @@
         "Code": 142.2,
         "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio5_b0ivmd.png",
         "display": "none"
+    },
+    {
+        "Name": "City FM",
+        "Code": 95.75,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio1_tih6ja.png",
+        "display": "none"
+    },
+    {
+        "Name": "Spicy FM",
+        "Code": 88.42,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio2_wzz8am.png",
+        "display": "none"
+    },
+    {
+        "Name": "Foorti FM",
+        "Code": 155.88,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291419/Radio%20Stations/radio3_p6ecev.png",
+        "display": "none"
+    },
+    {
+        "Name": "ABC Radio",
+        "Code": 89.2,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio4_ssdhrq.png",
+        "display": "none"
     }
 ]

@@ -44,6 +44,11 @@ const Header = () => {
                                 Contact
                             </li>
                         </Link>
+                        <Link to="/dashboard">
+                            <li>
+                                Dashboard
+                            </li>
+                        </Link>
                     </ul>
                     <div className={headerStyle.getStarted}>
                         <Link to="/signup">
