@@ -1,0 +1,27 @@
+[
+    {
+        "Name": "Putin FM",
+        "Code": 66.6,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio1_tih6ja.png"
+    },
+    {
+        "Name": "Dribbble FM",
+        "Code": 101.2,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio2_wzz8am.png"
+    },
+    {
+        "Name": "Doge FM",
+        "Code": 99.4,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291419/Radio%20Stations/radio3_p6ecev.png"
+    },
+    {
+        "Name": "Ballads FM",
+        "Code": 87.1,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio4_ssdhrq.png"
+    },
+    {
+        "Name": "Maximum FM",
+        "Code": 142.2,
+        "Image": "https://res.cloudinary.com/ashraful-islam/image/upload/v1653291418/Radio%20Stations/radio5_b0ivmd.png"
+    }
+]

@@ -1,0 +1,116 @@
+.containerbg {
+    background-color: #26252E;
+}
+
+.containerbg h4 {
+    color: #fff;
+    font-size: 25px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.container {
+    /* min-height: 70vh; */
+    padding: 5%;
+    width: 50%;
+    margin: auto;
+}
+
+.header {
+    background-color: #D9B06A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 3%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+.menuArea {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    list-style-type: none;
+    width: 100%;
+}
+
+.fmBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #31303A;
+    color: #fff;
+    position: relative;
+    border-bottom: 1px solid rgb(80, 80, 80);
+}
+
+.fmBtn p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #a4a5ad;
+}
+
+
+
+
+.playing p {
+    color: #D9B06A;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.playing h3 {
+    color: #a4a5ad;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 14px;
+}
+
+.switch {
+    width: 20px;
+}
+
+.heading {
+    color: #fff;
+    font-weight: 600;
+}
+
+.FmListContainer {
+    background-color: #33323C;
+    height: 50vh;
+    border-radius: 10px;
+    box-shadow: 10px 20px 10px #1D1C22;
+    position: relative;
+}
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 10%;
+}
+
+.playerImg {
+    height: 150px;
+    width: 150px;
+    border: 3px solid rgb(194, 193, 193);
+    border-radius: 50%;
+}
+
+.minusbtn {
+    width: 35px;
+}
