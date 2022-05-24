@@ -1,0 +1,39 @@
+.adminbg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.478), rgba(0, 0, 0, 0.507)), url("https://i.ibb.co/b263ZBR/slider-2.png");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.adminContainer {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.adminContainer input {
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.email {
+    margin: 5px;
+    border: 1px solid #fff;
+}
+
+.submit {
+    background-color: red;
+    color: #fff;
+    margin-left: 10px;
+    border: 1px solid red;
+    transition: ease-in-out 0.3s;
+}
+
+.submit:hover {
+    background-color: transparent;
+}
