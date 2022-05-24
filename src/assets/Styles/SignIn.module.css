@@ -1,9 +1,7 @@
 .bgStyle {
     min-height: 80vh;
     max-width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.676), rgba(0, 0, 0, 0.687)), url("https://templatekit.jegtheme.com/megafm/wp-content/uploads/sites/131/2021/07/P457XK8.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(rgb(0, 0, 0), rgba(82, 2, 2, 0.424)), url("https://live365.com/blog/content/images/2021/04/imageedit_2_2626752153.jpeg");
     background-attachment: fixed;
 }
 
@@ -12,11 +10,11 @@
 }
 
 .formContainer {
-    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.115);
     width: 40%;
     margin: auto;
     border-radius: 10px;
-    padding: 30px 10px;
+    padding: 50px 10px;
 }
 
 .welcome {
@@ -61,11 +59,11 @@
 
 .submit {
     color: #fff;
-    background-color: blue;
+    background-color: orange;
     font-size: 18px;
     padding: 10px;
     width: 100%;
-    border: 1px solid blue;
+    border: 1px solid orange;
     border-radius: 5px;
     transition: ease-in-out 0.3s;
 }
@@ -78,4 +76,36 @@
     color: #fff;
     font-size: 18px;
     margin-top: 10px;
+}
+
+.new a {
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+.new a:hover {
+    color: orange;
+}
+
+.googleSignin {
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.googleSignin:hover {
+    background-color: orange;
+    border: 1px solid orange;
+}
+
+.googleSignin p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
 }

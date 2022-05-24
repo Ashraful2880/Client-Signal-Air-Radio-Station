@@ -10,7 +10,7 @@ const Signin = () => {
             <div className={signIn.container}>
                 <div className={signIn.formContainer}>
                     <p className={signIn.welcome}>Welcome back !!!</p>
-                    <p className={signIn.login}>Login to Your Account </p>
+                    <p className={signIn.login}>Signin to Your Account </p>
                     <img className={signIn.mainLogo} src={logo} alt="logo" />
                     <form className={signIn.inputContainer}>
                         {/* {user.email ? setError('') : <span className="text-red-600">{error}</span>} */}
@@ -30,7 +30,7 @@ const Signin = () => {
                         <button
                             type="submit"
                             className={signIn.submit}>
-                            Login
+                            Signin
                         </button>
                     </form>
                     <p className={signIn.new}>Don't have account?
