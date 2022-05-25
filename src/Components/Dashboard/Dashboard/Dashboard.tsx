@@ -4,6 +4,7 @@ import DashboardHome from '../DashboardHome/DashboardHome';
 import ManageStations from '../ManageStations/ManageStations';
 import dashStyle from "../../../assets/Styles/Dashboard.module.css";
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddStation from '../AddStation/AddStation';
 
 const Dashboard = () => {
     return (
@@ -16,6 +17,9 @@ const Dashboard = () => {
                     <Link to="manageStations">
                         Manage Station
                     </Link>
+                    <Link to="addStation">
+                        Add Station
+                    </Link>
                     <Link to="makeAdmin">
                         Make Admin
                     </Link>
@@ -25,6 +29,7 @@ const Dashboard = () => {
                 <Routes>
                     <Route path="/" element={<DashboardHome />} />
                     <Route path="manageStations" element={<ManageStations />} />
+                    <Route path="addStation" element={<AddStation />} />
                     <Route path="makeAdmin" element={<MakeAdmin />} />
                 </Routes>
             </section>
