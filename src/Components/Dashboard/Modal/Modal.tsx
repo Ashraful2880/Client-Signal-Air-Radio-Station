@@ -7,7 +7,7 @@ const Modal = ({ display, setDisplay, code }: any) => {
     const [stationCode, setStationCode] = useState<any>(0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/findSingleStation/${code}`)
+        fetch(`https://signal-air-radio-station.herokuapp.com/findSingleStation/${code}`)
             .then(res => res.json())
             .then(data => setEditStations(data))
     }, [code])
@@ -22,7 +22,7 @@ const Modal = ({ display, setDisplay, code }: any) => {
         }
         console.log(formData);
 
-        fetch(`http://localhost:5000/updateSingleStation/${code}`, {
+        fetch(`https://signal-air-radio-station.herokuapp.com/updateSingleStation/${code}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

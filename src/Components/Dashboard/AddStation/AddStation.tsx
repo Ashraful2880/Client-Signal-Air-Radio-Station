@@ -16,7 +16,7 @@ const AddStation = () => {
             Image: image
         }
 
-        fetch('http://localhost:5000/addStation', {
+        fetch('https://signal-air-radio-station.herokuapp.com/addStation', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

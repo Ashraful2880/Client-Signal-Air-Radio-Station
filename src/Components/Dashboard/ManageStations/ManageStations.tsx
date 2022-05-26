@@ -21,7 +21,7 @@ const ManageStations = () => {
 
     // Get All Stations
     useEffect(() => {
-        fetch("http://localhost:5000/stations")
+        fetch("https://signal-air-radio-station.herokuapp.com/stations")
             .then(res => res.json())
             .then(data => setStations(data)
             )
@@ -33,7 +33,7 @@ const ManageStations = () => {
         setLoading(true);
         const proceed = window.confirm("Are You Sure ? Want to Delete?");
         if (proceed) {
-            const url = `http://localhost:5000/deleteStation/${code}`;
+            const url = `https://signal-air-radio-station.herokuapp.com/deleteStation/${code}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -29,7 +29,7 @@ const RadioStation = () => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:5000/stations")
+        fetch("https://signal-air-radio-station.herokuapp.com/stations")
             .then(res => res.json())
             .then(data => setRadioList(data)
             )
