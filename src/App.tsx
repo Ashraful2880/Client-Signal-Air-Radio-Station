@@ -5,6 +5,7 @@ import AllUsers from './Components/AllUsers/AllUsers';
 import CheckBulb from './Components/CheckBulb/CheckBulb';
 import Contact from './Components/Contact/Contact';
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Home from './Components/Home/Home/Home';
 import RadioStation from './Components/RadioStation/RadioStation';
 import Footer from "./Components/Shared/Footer/Footer";
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/*" element={<ErrorPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/checkBulb" element={<CheckBulb />} />
           <Route path="/users" element={<AllUsers />} />

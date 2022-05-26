@@ -2,8 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../../assets/Images/Signal-Air-Logo.png";
 import headerStyle from "../../../assets/Styles/Header.module.css";
+import { signOut } from 'firebase/auth';
+import auth from "../../../Firebase/Firebase.init";
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+
+    const logout = () => {
+        signOut(auth);
+    };
+
     return (
         <div className={headerStyle.bg}>
             <div className={headerStyle.container}>
@@ -49,16 +58,34 @@ const Header = () => {
                                 Dashboard
                             </li>
                         </Link>
-                        <Link to="/signup">
-                            <li>
-                                SignUp
-                            </li>
-                        </Link>
-                        <Link to="/signin">
-                            <li>
-                                SignIn
-                            </li>
-                        </Link>
+                        {
+                            user ?
+                                <>
+                                    <Link to="/home" onClick={() => logout()}>
+                                        <li>
+                                            Sign Out
+                                        </li>
+                                    </Link>
+                                    <Link to="/home" onClick={() => logout()}>
+                                        <li style={{ backgroundColor: "red" }}>
+                                            {user.displayName}
+                                        </li>
+                                    </Link>
+                                </>
+                                :
+                                <>
+                                    <Link to="/signup">
+                                        <li>
+                                            SignUp
+                                        </li>
+                                    </Link>
+                                    <Link to="/signin">
+                                        <li>
+                                            SignIn
+                                        </li>
+                                    </Link>
+                                </>
+                        }
                     </ul>
                     <div className={headerStyle.getStarted}>
                         <Link to="/signup">

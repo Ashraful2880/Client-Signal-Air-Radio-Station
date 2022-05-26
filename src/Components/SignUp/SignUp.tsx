@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/Images/Signal-Air-Logo.png";
 import signIn from "../../assets/Styles/SignIn.module.css";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/Firebase.init";
 
 const SignUp = () => {
@@ -10,6 +10,8 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
+
 
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
 
@@ -23,6 +25,12 @@ const SignUp = () => {
     if (loading) {
         return <p style={{ minHeight: "90vh" }}>Loading...</p>;
     }
+    const handleSignUp = async () => {
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        alert('Updated profile');
+        console.log('upadate Profile');
+    }
 
     return (
         <div className={signIn.bgStyle}>
@@ -30,7 +38,7 @@ const SignUp = () => {
                 <div className={signIn.formContainer}>
                     <p className={signIn.welcome}>Please Signup</p>
                     <img className={signIn.mainLogo} src={logo} alt="logo" />
-                    <form className={signIn.inputContainer} onSubmit={() => createUserWithEmailAndPassword(email, password)}>
+                    <form className={signIn.inputContainer} onSubmit={() => handleSignUp()}>
                         <>
                             <p className={signIn.label}>Your Name</p>
                             <input
