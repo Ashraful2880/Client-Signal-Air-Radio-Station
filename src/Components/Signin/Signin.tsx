@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import signIn from "../../assets/Styles/SignIn.module.css";
 import logo from "../../assets/Images/Signal-Air-Logo.png";
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from "../../Firebase/Firebase.init";
 
 
 const Signin = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    if (error) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+            </div>
+        );
+    }
+    if (loading) {
+        return <p style={{ minHeight: "90vh" }}>Loading...</p>;
+    }
 
     return (
         <div className={signIn.bgStyle}>
@@ -13,15 +33,17 @@ const Signin = () => {
                     <p className={signIn.welcome}>Welcome back !!!</p>
                     <p className={signIn.login}>Signin to Your Account </p>
                     <img className={signIn.mainLogo} src={logo} alt="logo" />
-                    <form className={signIn.inputContainer}>
+                    <form className={signIn.inputContainer} onSubmit={() => signInWithEmailAndPassword(email, password)}>
                         <>
                             <p className={signIn.label}>Your Email</p>
                             <input
+                                onChange={(e) => setEmail(e.target.value)}
                                 type="email"
                                 className={signIn.email}
                                 placeholder="example@gmail.com " />
                             <p className={signIn.label}>Your Password</p>
                             <input
+                                onChange={(e) => setPassword(e.target.value)}
                                 type="password"
                                 className={signIn.email}
                                 placeholder="Your Password" />
