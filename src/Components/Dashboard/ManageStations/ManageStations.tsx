@@ -3,15 +3,19 @@ import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect } from 'react';
 import style from "../../../assets/Styles/ManageStation.module.css";
 import { useState } from 'react';
+import Modal from '../Modal/Modal';
 
 const ManageStations = () => {
+    const [loading, setLoading] = useState(false)
     const [display, setDisplay] = useState("none")
+    const [code, setCode] = useState<any>(0);
     const [stations, setStations] = React.useState<
         Array<{
             Name: string,
             Code: number,
             Image: string,
-            display: string
+            display: string,
+            _id: any
         }>
     >([])
 
@@ -21,11 +25,12 @@ const ManageStations = () => {
             .then(res => res.json())
             .then(data => setStations(data)
             )
-    }, [])
+    }, [loading, display])
 
 
     // Delete Stations
     const deleteStation = (code: number) => {
+        setLoading(true);
         const proceed = window.confirm("Are You Sure ? Want to Delete?");
         if (proceed) {
             const url = `http://localhost:5000/deleteStation/${code}`;
@@ -37,9 +42,14 @@ const ManageStations = () => {
                     if (data.deletedCount > 0) {
                         alert("Station Delete Complete")
                     }
-                    window.location.reload();
+                    setLoading(false);
                 })
         }
+    }
+
+    const displayName = (id: any) => {
+        setDisplay("block")
+        setCode(id)
     }
 
     return (
@@ -65,7 +75,7 @@ const ManageStations = () => {
                                     {station?.Code}
                                 </td>
                                 <td>
-                                    <button onClick={() => setDisplay("block")}>
+                                    <button onClick={() => displayName(station?._id)}>
                                         <FontAwesomeIcon className={style.edit} icon={faEdit} />
                                     </button>
                                 </td>
@@ -79,29 +89,9 @@ const ManageStations = () => {
                     </tbody>
                 </table>
             </main>
-            <div id="myModal" className={style.modal} style={{ display: `${display}` }}>
-                <div className={style.modalContent}>
-                    <span className={style.close} onClick={() => setDisplay("none")}>&times;</span>
-                    <form className={style.formContainer}>
-                        <h2>Change Station Details</h2>
-                        <div>
-                            <label htmlFor="name">Station Name</label>
-                            <input type="text" placeholder="Enter Station Name" required />
-                        </div>
-                        <div>
-                            <label htmlFor="number">Channel Number</label>
-                            <input type="number" placeholder="Enter Channel Number" required />
-                        </div>
-                        <div>
-                            <label htmlFor="file">Station Image</label>
-                            <input type="file" />
-                        </div>
-                        <div>
-                            <input className={style.submitbtn} type="submit" value="Confirm" />
-                        </div>
-                    </form>
-                </div>
-            </div>
+            {
+                display === "block" && <Modal display={display} setDisplay={setDisplay} code={code} />
+            }
         </div>
     );
 };

@@ -53,17 +53,12 @@ const Header = () => {
                                 Contact
                             </li>
                         </Link>
-                        <Link to="/dashboard">
-                            <li>
-                                Dashboard
-                            </li>
-                        </Link>
                         {
                             user ?
                                 <>
-                                    <Link to="/home" onClick={() => logout()}>
+                                    <Link to="/dashboard">
                                         <li>
-                                            Sign Out
+                                            Dashboard
                                         </li>
                                     </Link>
                                     <Link to="/home" onClick={() => logout()}>

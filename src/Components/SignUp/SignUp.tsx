@@ -10,26 +10,17 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
+    const [updateProfile] = useUpdateProfile(auth);
 
 
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
 
-    if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
-    }
     if (loading) {
         return <p style={{ minHeight: "90vh" }}>Loading...</p>;
     }
     const handleSignUp = async () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        alert('Updated profile');
-        console.log('upadate Profile');
     }
 
     return (
@@ -58,6 +49,7 @@ const SignUp = () => {
                                 type="password"
                                 className={signIn.email}
                                 placeholder="Your Password" required />
+                            <p style={{ color: "red" }}>{error?.message}</p>
                             <button
                                 type="submit"
                                 className={signIn.submit}>
